@@ -7,11 +7,24 @@ output: github_document
 
 #P8105 HW 1 Assignment
 
-This loads the penguins dataset
+This loads the penguins data set
 ```{r setup}
+
 data("penguins", package = "palmerpenguins")
+
 ```
 
-The size of the data set is `r nrow(penguins)` rows by `r ncol(penguins)` columns
+* The penguins data set contains the following information in each column: `r colnames(penguins)`. With the penguin species ranging from `r penguins[1, 1]`, `r penguins[190, 1]`, and `r penguins[340, 1]`
+
+* The islands these penguins reside on is `r penguins[1, 2]`, `r penguins[21, 2]` and `r penguins[36, 2]` 
+
+
+* The sex of these penguins are both `r penguins[1, 7]` and `r penguins[2, 7]`
+
+
+* The year this data was collected ranges between `r penguins[172, 8]`, `r penguins[66, 8]` and `r penguins[109, 8]`
+
+
+* The size of the penguins data set is `r nrow(penguins)` rows by  `r ncol(penguins)` columns
 
 
