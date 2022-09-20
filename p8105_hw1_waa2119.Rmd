@@ -1,0 +1,17 @@
+---
+title: "p8105_hw1_waa2119"
+author: "William Anderson"
+date: "2022-09-20"
+output: github_document
+---
+
+#P8105 HW 1 Assignment
+
+This loads the penguins dataset
+```{r setup}
+data("penguins", package = "palmerpenguins")
+```
+
+The size of the data set is `r nrow(penguins)` rows by `r ncol(penguins)` columns
+
+
