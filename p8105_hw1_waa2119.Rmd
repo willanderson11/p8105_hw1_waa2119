@@ -4,7 +4,7 @@ author: "William Anderson"
 date: "2022-09-20"
 output: github_document
 ---
-```{r, echo = FALSE, message = FALSE}
+```{r, message = FALSE}
 
 library(tidyverse)
 
@@ -46,13 +46,15 @@ Now we will make a scatter plot of flipper length vs bill length
 
 ```{r, scatter plot of flipper length vs bill length}
 
-ggplot(penguins, aes(x = bill_length_mm, y = flipper_length_mm, color = "species")) + geom_point()
+ggplot(penguins, aes(x = bill_length_mm, y = flipper_length_mm, color = species)) + geom_point()
 
 ggsave("scatter_plot_HW1.pdf")
 
 ```
 
 #Problem 2
+
+Now creating a tibble with various vectors inside
 
 ```{r}
 
@@ -62,12 +64,42 @@ my_data_frame = tibble(
   
   log_vec = my_random_sample > 0,
   
-  char_vec = 
+  char_vec = character(length = 10),
+  
+  fact_vec = factor(char_vec, levels = 3)
   
 )
+
+```
+
+Now attempting to take the mean of the vectors within the tibble
+
+```{r}
+
+avg_rand_samp = mean(pull(my_data_frame, my_random_sample))
+
+avg_log_vec = mean(pull(my_data_frame, log_vec))
+
+avg_char_vec = mean(pull(my_data_frame, char_vec))
+
+avg_fact_vec = mean(pull(my_data_frame, fact_vec))
 
 
 ```
 
+We see that the mean of the random sample is `r avg_rand_samp`, but we are unable to calculate the mean of the logical: `r avg_log_vec`, mean of character: `r avg_char_vec`, and mean of factor vector: `r avg_fact_vec` as they are not numerical values
+
+We can then convert their values to the numerical type
+
+```{r, changing to numeric type, eval = FALSE}
+
+num_log_vec = as.numeric(pull(my_data_frame, log_vec))
+
+num_char_vec = as.numeric(pull(my_data_frame, char_vec))
+
+num_fact_vec = as.numeric(pull(my_data_frame, fact_vec))
+
+
+```
 
 
