@@ -20,7 +20,7 @@ data("penguins", package = "palmerpenguins")
 
 ```
 
-#Problem 1
+# Problem 1
 
 * The penguins data set contains the following information in each column: `r colnames(penguins)`
 
@@ -52,7 +52,7 @@ ggsave("scatter_plot_HW1.pdf")
 
 ```
 
-#Problem 2
+# Problem 2
 
 Now creating a tibble with various vectors inside
 
