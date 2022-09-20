@@ -5,7 +5,9 @@ date: "2022-09-20"
 output: github_document
 ---
 ```{r, echo = FALSE, message = FALSE}
+
 library(tidyverse)
+
 ```
 
 
@@ -17,6 +19,8 @@ This loads the penguins data set
 data("penguins", package = "palmerpenguins")
 
 ```
+
+#Problem 1
 
 * The penguins data set contains the following information in each column: `r colnames(penguins)`
 
@@ -37,10 +41,33 @@ data("penguins", package = "palmerpenguins")
 
 * The mean flipper length of all penguins in the data set is `r mean(penguins$flipper_length_mm, na.rm = TRUE)` mm
 
+
 Now we will make a scatter plot of flipper length vs bill length
+
 ```{r, scatter plot of flipper length vs bill length}
 
-ggplot(penguins, aes(x = bill_length_mm, y = flipper_length_mm, color = species)) + geom_point()
+ggplot(penguins, aes(x = bill_length_mm, y = flipper_length_mm, color = "species")) + geom_point()
+
+ggsave("scatter_plot_HW1.pdf")
 
 ```
+
+#Problem 2
+
+```{r}
+
+my_data_frame = tibble(
+  
+  my_random_sample = rnorm(n = 10, mean = 0, sd = 1),
+  
+  log_vec = my_random_sample > 0,
+  
+  char_vec = 
+  
+)
+
+
+```
+
+
 
