@@ -4,6 +4,10 @@ author: "William Anderson"
 date: "2022-09-20"
 output: github_document
 ---
+```{r, echo = FALSE, message = FALSE}
+library(tidyverse)
+```
+
 
 #P8105 HW 1 Assignment
 
@@ -14,17 +18,29 @@ data("penguins", package = "palmerpenguins")
 
 ```
 
-* The penguins data set contains the following information in each column: `r colnames(penguins)`. With the penguin species ranging from `r penguins[1, 1]`, `r penguins[190, 1]`, and `r penguins[340, 1]`
-
-* The islands these penguins reside on is `r penguins[1, 2]`, `r penguins[21, 2]` and `r penguins[36, 2]` 
+* The penguins data set contains the following information in each column: `r colnames(penguins)`
 
 
-* The sex of these penguins are both `r penguins[1, 7]` and `r penguins[2, 7]`
+  * The penguin species ranges from `r penguins[1, 1]`, `r penguins[190, 1]`, and `r penguins[340, 1]`
+  
+
+  * The islands these penguins reside on is `r penguins[1, 2]`, `r penguins[21, 2]` and `r penguins[36, 2]` 
 
 
-* The year this data was collected ranges between `r penguins[172, 8]`, `r penguins[66, 8]` and `r penguins[109, 8]`
+  * The sex of these penguins are both `r penguins[1, 7]` and `r penguins[2, 7]`
+
+
+  * The year this data was collected ranges between `r penguins[172, 8]`, `r penguins[66, 8]`, and `r penguins[109, 8]`
 
 
 * The size of the penguins data set is `r nrow(penguins)` rows by  `r ncol(penguins)` columns
 
+* The mean flipper length of all penguins in the data set is `r mean(penguins$flipper_length_mm, na.rm = TRUE)` mm
+
+Now we will make a scatter plot of flipper length vs bill length
+```{r, scatter plot of flipper length vs bill length}
+
+ggplot(penguins, aes(x = bill_length_mm, y = flipper_length_mm, color = species)) + geom_point()
+
+```
 
