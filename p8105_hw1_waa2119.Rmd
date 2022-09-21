@@ -12,7 +12,7 @@ library(tidyverse)
 ```
 
 
-#P8105 HW 1 Assignment
+# P8105 HW 1 Assignment
 
 
 This loads the penguins data set
@@ -37,51 +37,23 @@ head(penguins, 20)
 * The islands these penguins reside on is `r penguins[1, 2]`, `r penguins[21, 2]` and `r penguins[36, 2]`.
 
 
-* The sex of these penguins are both `r penguins[1, 7]` and 
-
-`r penguins[2, 7]`. 
+* The sex of these penguins are both `r penguins[1, 7]` and `r penguins[2, 7]`. 
 
 
-* The year this data was collected ranges between `r penguins[172, 8]`
-
-`r penguins[66, 8]`, and `r penguins[109, 8]`. 
+* The year this data was collected ranges between `r penguins[172, 8]`, `r penguins[66, 8]`, and `r penguins[109, 8]`. 
 
 
-* The mean, median, and standard deviation of the bill length of these
-
-penguins is `r mean(penguins$bill_length_mm, na.rm = TRUE)`, 
-
-`r median(penguins$bill_length_mm, na.rm = TRUE)`, 
-
-and `r sd(penguins$bill_length_mm, na.rm = TRUE)` mm respectively.
+* The mean, median, and standard deviation of the bill length of these penguins is `r mean(penguins$bill_length_mm, na.rm = TRUE)`, `r median(penguins$bill_length_mm, na.rm = TRUE)`, and `r sd(penguins$bill_length_mm, na.rm = TRUE)` mm respectively.
 
 
-* The mean, median, and standard deviation of the bill depth of these
-
-penguins is `r mean(penguins$bill_depth_mm, na.rm = TRUE)`, 
-
-`r median(penguins$bill_depth_mm, na.rm = TRUE)`, 
-
-and `r sd(penguins$bill_depth_mm, na.rm = TRUE)` mm
-
-respectively. 
-
-* The mean, median, and standard deviation of the flipper length of
-
-these penguins is `r mean(penguins$flipper_length_mm, na.rm = TRUE)`,
-
-`r median(penguins$flipper_length_mm, na.rm = TRUE)`, 
-
-and `r sd(penguins$flipper_length_mm, na.rm = TRUE)` mm respectively. 
+* The mean, median, and standard deviation of the bill depth of these penguins is `r mean(penguins$bill_depth_mm, na.rm = TRUE)`, `r median(penguins$bill_depth_mm, na.rm = TRUE)`, and `r sd(penguins$bill_depth_mm, na.rm = TRUE)` mm respectively. 
 
 
-Lastly, the the mean, median, and standard deviation of the body mass
+* The mean, median, and standard deviation of the flipper length of these penguins is `r mean(penguins$flipper_length_mm, na.rm = TRUE)`, `r median(penguins$flipper_length_mm, na.rm = TRUE)`, and `r sd(penguins$flipper_length_mm, na.rm = TRUE)` mm respectively. 
 
-of these penguins is `r mean(penguins$body_mass_g, na.rm = TRUE)`, 
 
-`r median(penguins$body_mass_g, na.rm = TRUE)`, and 
+* Lastly, the the mean, median, and standard deviation of the body mass of these penguins is `r mean(penguins$body_mass_g, na.rm = TRUE)`, `r median(penguins$body_mass_g, na.rm = TRUE)`, and `r sd(penguins$body_mass_g, na.rm = TRUE)` g respectively. 
 
-`r sd(penguins$body_mass_g, na.rm = TRUE)` g respectively. 
 
 
 * The size of the penguins data set is `r nrow(penguins)` rows by  `r ncol(penguins)` columns
@@ -95,7 +67,9 @@ Now we will make a scatter plot of flipper length vs bill length
 
 ```{r, scatter plot of flipper length vs bill length}
 
+
 ggplot(penguins, aes(x = bill_length_mm, y = flipper_length_mm, color = species)) + geom_point()
+
 
 ggsave("scatter_plot_HW1.pdf")
 
@@ -136,7 +110,7 @@ avg_fact_vec = mean(pull(my_data_frame, fact_vec))
 
 ```
 
-We see that the mean of the random sample is `r avg_rand_samp`, but we are unable to calculate the mean of the logical: `r avg_log_vec`, mean of character: `r avg_char_vec`, and mean of factor vector: `r avg_fact_vec` as they are not numerical values
+We see that the mean of the random sample is `r avg_rand_samp`, but we are unable to calculate the mean of the logical vector: `r avg_log_vec`, mean of character vector: `r avg_char_vec`, and mean of factor vector: `r avg_fact_vec` as they are not numerical values
 
 We can then convert their values to the numerical type
 
