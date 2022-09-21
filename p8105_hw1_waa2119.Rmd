@@ -4,6 +4,7 @@ author: "William Anderson"
 date: "2022-09-20"
 output: github_document
 ---
+
 ```{r, message = FALSE}
 
 library(tidyverse)
@@ -13,33 +14,81 @@ library(tidyverse)
 
 #P8105 HW 1 Assignment
 
+
 This loads the penguins data set
 ```{r setup}
 
 data("penguins", package = "palmerpenguins")
 
+head(penguins, 20)
+
 ```
 
+
 # Problem 1
+
 
 * The penguins data set contains the following information in each column: `r colnames(penguins)`
 
 
-  * The penguin species ranges from `r penguins[1, 1]`, `r penguins[190, 1]`, and `r penguins[340, 1]`
-  
-
-  * The islands these penguins reside on is `r penguins[1, 2]`, `r penguins[21, 2]` and `r penguins[36, 2]` 
+* The penguin species ranges from `r penguins[1, 1]`, `r penguins[190, 1]`, and `r penguins[340, 1]`. 
 
 
-  * The sex of these penguins are both `r penguins[1, 7]` and `r penguins[2, 7]`
+* The islands these penguins reside on is `r penguins[1, 2]`, `r penguins[21, 2]` and `r penguins[36, 2]`.
 
 
-  * The year this data was collected ranges between `r penguins[172, 8]`, `r penguins[66, 8]`, and `r penguins[109, 8]`
+* The sex of these penguins are both `r penguins[1, 7]` and 
+
+`r penguins[2, 7]`. 
+
+
+* The year this data was collected ranges between `r penguins[172, 8]`
+
+`r penguins[66, 8]`, and `r penguins[109, 8]`. 
+
+
+* The mean, median, and standard deviation of the bill length of these
+
+penguins is `r mean(penguins$bill_length_mm, na.rm = TRUE)`, 
+
+`r median(penguins$bill_length_mm, na.rm = TRUE)`, 
+
+and `r sd(penguins$bill_length_mm, na.rm = TRUE)` mm respectively.
+
+
+* The mean, median, and standard deviation of the bill depth of these
+
+penguins is `r mean(penguins$bill_depth_mm, na.rm = TRUE)`, 
+
+`r median(penguins$bill_depth_mm, na.rm = TRUE)`, 
+
+and `r sd(penguins$bill_depth_mm, na.rm = TRUE)` mm
+
+respectively. 
+
+* The mean, median, and standard deviation of the flipper length of
+
+these penguins is `r mean(penguins$flipper_length_mm, na.rm = TRUE)`,
+
+`r median(penguins$flipper_length_mm, na.rm = TRUE)`, 
+
+and `r sd(penguins$flipper_length_mm, na.rm = TRUE)` mm respectively. 
+
+
+Lastly, the the mean, median, and standard deviation of the body mass
+
+of these penguins is `r mean(penguins$body_mass_g, na.rm = TRUE)`, 
+
+`r median(penguins$body_mass_g, na.rm = TRUE)`, and 
+
+`r sd(penguins$body_mass_g, na.rm = TRUE)` g respectively. 
 
 
 * The size of the penguins data set is `r nrow(penguins)` rows by  `r ncol(penguins)` columns
 
+
 * The mean flipper length of all penguins in the data set is `r mean(penguins$flipper_length_mm, na.rm = TRUE)` mm
+
 
 
 Now we will make a scatter plot of flipper length vs bill length
@@ -64,9 +113,9 @@ my_data_frame = tibble(
   
   log_vec = my_random_sample > 0,
   
-  char_vec = character(length = 10),
+  char_vec = c("a", "b", "c", "d", "e", "f", "g", "h", "i", "j"),
   
-  fact_vec = factor(char_vec, levels = 3)
+  fact_vec = factor(c("First", "Second", "Third", "First", "Second", "Third", "First", "Second", "Third", "First"))
   
 )
 
