@@ -16,7 +16,7 @@ library(tidyverse)
 
 
 This loads the penguins data set
-```{r setup}
+```{r}
 
 data("penguins", package = "palmerpenguins")
 
@@ -65,7 +65,7 @@ head(penguins, 20)
 
 Now we will make a scatter plot of flipper length vs bill length
 
-```{r, scatter plot of flipper length vs bill length}
+```{r, warning = FALSE}
 
 
 ggplot(penguins, aes(x = bill_length_mm, y = flipper_length_mm, color = species)) + geom_point()
@@ -74,6 +74,8 @@ ggplot(penguins, aes(x = bill_length_mm, y = flipper_length_mm, color = species)
 ggsave("scatter_plot_HW1.pdf")
 
 ```
+
+
 
 # Problem 2
 
@@ -95,6 +97,8 @@ my_data_frame = tibble(
 
 ```
 
+
+
 Now attempting to take the mean of the vectors within the tibble
 
 ```{r}
@@ -110,7 +114,9 @@ avg_fact_vec = mean(pull(my_data_frame, fact_vec))
 
 ```
 
-We see that the mean of the random sample is `r avg_rand_samp`, but we are unable to calculate the mean of the logical vector: `r avg_log_vec`, mean of character vector: `r avg_char_vec`, and mean of factor vector: `r avg_fact_vec` as they are not numerical values
+
+We see that the mean of the random sample is `r avg_rand_samp`, and the mean of the logical vector is: `r avg_log_vec`, because R assigns the number 1 to true values and 0 to false values, but we are unable to compute the mean of the character vector: `r avg_char_vec`, and mean of factor vector: `r avg_fact_vec` as they are not numerical values. 
+
 
 We can then convert their values to the numerical type
 
@@ -125,4 +131,5 @@ num_fact_vec = as.numeric(pull(my_data_frame, fact_vec))
 
 ```
 
+This converts non-numeric values such as characters and factor levels to numerical data which can then be used in mathematical formulas for computations.
 
